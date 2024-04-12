@@ -1,0 +1,104 @@
+@import "../../responsive.scss";
+.searchBar {  
+  .type {
+    button {
+      padding: 10px 30px;
+      border: 1px solid #999;
+      border-bottom: none;
+      text-transform: capitalize;
+      background-color: white;
+      cursor: pointer;
+      &.active {
+        background-color: black;
+        color: white;
+        
+      }
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-right: none;
+      }
+      &:last-child {
+        border-top-right-radius: 5px;
+        border-left: none;
+      }
+
+      @include sm{
+        padding:10px 30px;
+        border-bottom:1px solid #999;
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    height: 50px;
+    border: 1px solid #999;
+
+    @include sm{
+      border: none;
+      justify-content: center;
+      flex-direction: column;
+      margin-top: 55px;
+    }
+    input {
+      border: none;
+      width: 200px;
+      padding: 0px 10px;
+      @include lg {
+        padding: 0px 5px;
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: 140px;
+        }
+      }
+
+      @include md {
+        width: 200px;
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: 200px;
+        }
+      }
+
+      @include sm {
+        padding: 10px 20px;
+        border: 1px solid #999;
+        border-radius: 5px;
+        width: auto;
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: auto;
+          padding: 10px 20px;
+          border: 1px solid #999;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      background-color: rgb(224, 148, 18);
+      padding: 10px 30px;
+      @include sm{
+        padding: 5px 10px ;
+        align-items:center;
+        justify-content: center;
+      }
+      @include md{
+        padding: 10px 20px;
+      }
+      img {
+        width: 25px;
+        height: 25px;
+
+        @include sm{
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+  }
+}

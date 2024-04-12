@@ -1,0 +1,89 @@
+@import "../../responsive.scss";
+
+.homePage {
+  display: flex;
+  height: 100%;
+  .textContainer {
+    width: 60%;
+    flex: 3;
+    .wrapper {
+      padding-right: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      height: 100%;
+      p {
+        font-size: 15px;
+        width: 100%;
+        @include md {
+          font-size: 12px;
+        }
+        @include sm {
+          font-size: 10px;
+        }
+      }
+      .title {
+        font-size: 50px;
+        @include md{
+          font-size: 40px;
+        }
+        @include sm{
+          font-size: 30px;
+        }
+      }
+      @include lg {
+        padding-right: 30px;
+      }
+
+      @include md {
+        padding: 0;
+      }
+
+      @include sm {
+        justify-content: flex-start;
+      }
+    }
+
+    .boxes {
+      display: flex;
+      justify-content: space-between;
+      @include sm {
+        display: none;
+      }
+      h1 {
+        font-size: 30px;
+      }
+      h2 {
+        font-size: 20px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .imgContainer {
+    flex: 2;
+    background-color: #fcf5f3;
+    position: relative; // So here the parent element using position:relative
+    justify-content: center;
+    align-items: center;
+    @include md {
+      display: none;
+    }
+    img {
+      position: absolute; // Here its the child component,
+      //so if we are using position: relative,
+      //then it will take and override the parent element.
+      //Here  parent element is imgContainer, so it will overflow
+      //that element.At the mean time, if there is no parent element,
+      // then body will act as parent element.
+      //So this element will overflow to that body
+      width: 115%;
+      right: 0;
+      height: 600px;
+      @include lg {
+        width: 105%;
+      }
+    }
+  }
+}
